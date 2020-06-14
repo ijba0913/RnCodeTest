@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Content, Icon } from 'native-base'
+import { View, Text, Content, Icon, Title } from 'native-base'
 import { DrawerItems } from 'react-navigation-drawer'
 
 
@@ -8,19 +8,20 @@ const Drawer = (props) => {
   console.log('drawer ----------', props)
   return (
     <Content>
-      <Text>Code Test App</Text>
+      <Title>Code Test App</Title>
 
       <DrawerItems {...props} />
 
-      <View >
+      {navigation.state.key === 'AppNav' && (
+        <View style={{ width: '100%', paddingHorizontal: 18 }}>
+          <Icon name='log-out' onPress={() => {
+            logout()
+            navigation.navigate('AuthNav')
+          }} />
+        </View>
+      )}
 
-        <Icon name='log-out' onPress={() => {
-          logout()
-          navigation.navigate('AuthNav')
-        }} />
-      </View>
-
-    </Content>
+    </Content >
   )
 }
 

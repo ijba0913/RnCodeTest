@@ -25,7 +25,7 @@ const LoginForm = (props) => {
   console.log('LoginForm', props)
   return (
     <View>
-      <Field
+      {/* <Field
         name="email"
         component={renderInput}
         placeholder='Email'
@@ -35,7 +35,7 @@ const LoginForm = (props) => {
         component={renderInput}
         placeholder='Password'
         type='password'
-      />
+      /> */}
       <Button onPress={handleSubmit(login)}>
         <Text>Login</Text>
       </Button>

@@ -2,7 +2,7 @@ import { createAppContainer } from 'react-navigation'
 import { createDrawerNavigator } from 'react-navigation-drawer'
 
 import Drawer from '../containers/Drawer'
-import Login from '../components/Login'
+import Login from '../containers/Login'
 import Weather from '../containers/Weather'
 
 
@@ -29,7 +29,7 @@ const AuthDrawerNavigator = createDrawerNavigator(
     initialRouteName: 'Login',
     contentOptions: {
       activeTintColor: 'white',
-      activeBackgroundColor: 'green'
+      activeBackgroundColor: 'blue'
     }
   }
 )

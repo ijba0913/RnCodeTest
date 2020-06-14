@@ -29,7 +29,7 @@ const AppDrawerNavigator = createDrawerNavigator(
     initialRouteName: 'Landing',
     contentOptions: {
       activeTintColor: 'white',
-      activeBackgroundColor: 'green'
+      activeBackgroundColor: 'blue'
     }
   }
 )

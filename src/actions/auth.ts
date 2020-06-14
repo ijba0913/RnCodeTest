@@ -30,7 +30,7 @@ export const logout = () => dispatch => {
   dispatch({ type: GET_USER_ERROR, payload: 'logged out' })
 }
 
-export const getUser = (user) => async dispatch => {
+export const getUser = () => async dispatch => {
   dispatch({ type: LOGIN_LOADING })
 
   const token = await AsyncStorage.getItem('accessToken')
