@@ -5,18 +5,32 @@ import { Content, Text, View, Button } from 'native-base'
 import Page from '../Page';
 import Card from './Card'
 
-const Weather = ({
-  fetchLocation, info, fetchWeather, weather, isLargeScreen
-}) => {
-  return (
-    <Page title="Weather">
+interface Props {
+  weather: {
+    daily: Array<object>,
+  },
+  isLargeScreen: boolean,
+}
 
-      {/* {weather && <Card {...weather.current} />} */}
-      {weather && weather.daily.map(day => (
-        <Card {...day} isLargeScreen={isLargeScreen}/>
+// type weather {
+//   daily: [Array],
+
+// }
+
+const Weather: React.FC<Props> = (props) => {
+  //   weather, isLargeScreen
+  // }) => {
+  const { weather, isLargeScreen } = props
+
+  return(
+    <Page title = "Weather" >
+
+      {/* {weather && <Card {...weather.current} />} */ }
+      { weather && weather.daily.map((day, key) => (
+        <Card {...day} isLargeScreen={isLargeScreen} key={key} />
       ))}
 
-    </Page>
+    </Page >
   )
 }
 
